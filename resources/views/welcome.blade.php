@@ -3,8 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage!</title>
+
+    @vite('resources/css/app.css')
 </head>
-<body>
+<body class="text-center px-8 py-12">
     <h1>This page is made by Abid Hermawan</h1>
     <h2>NRP : 5025231069</h2>
 
