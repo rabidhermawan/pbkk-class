@@ -6,21 +6,20 @@
 </head>
 <body>
     <h1>You got me!</h1>
-    <p> {{ $greeting }} </p>
+    @if($greeting == "Hello!")
+        <p>If you can see this that means I am saying hello to you!</p>        
+    @endif
+    <!--<p> {{ $greeting }} </p> -->
 
     <p>List of good things!</p>
     <ul>
-        <li>
-            <a href="/secretmaybe/goodthings/{{$goodstuff[0]["id"]}}">
-                {{ $goodstuff[0]["goodthings"]}}
+        @foreach($goodstuff as $stuff)
+            <li>
+            <a href="/secretmaybe/goodthings/{{$stuff["id"]}}">
+                {{ $stuff["goodthings"]}}
             </a>
         </li>
-
-        <li>
-            <a href="/secretmaybe/goodthings/{{$goodstuff[1]["id"]}}">
-                {{ $goodstuff[1]["goodthings"]}}
-            </a>
-        </li>
+        @endforeach
     </ul>
 </body>
 </html>
