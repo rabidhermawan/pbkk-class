@@ -15,6 +15,10 @@ Route::get('/secretmaybe', function (){
     return view('secretstuff.secretpage', ["greeting" => "Hello!", "goodstuff" => $goodthings ]);
 });
 
+Route::get('/secretmaybe/goodthings/create', function () {
+    return view('secretstuff.create');
+});
+
 Route::get('/secretmaybe/goodthings/{id}', function ($id) {
     $goodthings = [
         ["id" => "1", "goodthings" => "Got 10 RM from the road!", "date" => "26/08/2025"], 
