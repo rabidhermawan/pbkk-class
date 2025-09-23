@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\goodthings;
+use App\Models\Goodthings;
 
 class GoodthingsSeeder extends Seeder
 {
@@ -13,6 +13,6 @@ class GoodthingsSeeder extends Seeder
      */
     public function run(): void
     {
-        goodthings::factory()->count(50)->create();
+        Goodthings::factory()->count(50)->create();
     }
 }
