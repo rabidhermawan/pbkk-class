@@ -1,10 +1,10 @@
 <x-layout>
     <h1>You got me!</h1>
 
-    @if($greeting == "Hello!")
+    {{-- @if($greeting == "Hello!")
         <p>If you can see this that means I am saying hello to you!</p>        
     @endif
-    <!--<p> {{ $greeting }} </p> -->
+    <!--<p> {{ $greeting }} </p> --> --}}
 
     <h2>List of good things!</h2>
     <ul>
