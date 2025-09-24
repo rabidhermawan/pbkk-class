@@ -13,7 +13,9 @@
         <nav>
             <h1>The Good Stuff</h1>
             <a href="/">Homepage</a>
-            <a href="/secretmaybe/goodthings/create">Create Good Stuff</a>
+
+            <a href="{{ route('goodthings') }}">All Good Stuff</a>
+            <a href="{{ route('goodthings.create') }}">Create Good Stuff</a>
         </nav>
     </header>
 

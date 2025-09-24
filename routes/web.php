@@ -6,8 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/secretmaybe', [GoodthingsController::class, 'index']);
-
-Route::get('/secretmaybe/goodthings/create', [GoodthingsController::class, 'create']);
-
-Route::get('/secretmaybe/goodthings/{id}', [GoodthingsController::class, 'show']);
+Route::get('/secretmaybe', [GoodthingsController::class, 'index'])->name('goodthings');
+Route::get('/secretmaybe/goodthings/create', [GoodthingsController::class, 'create'])->name('goodthings.create');
+Route::get('/secretmaybe/goodthings/{id}', [GoodthingsController::class, 'show'])->name('goodthings.show');

@@ -10,7 +10,7 @@
     <ul>
         @foreach($goodstuff as $stuff)
             <li>
-                <x-card href="/secretmaybe/goodthings/{{ $stuff->id }}" :highlight="$stuff['id'] < 2 ">
+                <x-card href="{{ route('goodthings.show', $stuff->id) }}" :highlight="$stuff['id'] < 2 ">
                     <h3>{{ $stuff->goodthings }}</h3>
                 </x-card>
             </li>

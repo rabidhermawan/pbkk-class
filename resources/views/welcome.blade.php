@@ -10,6 +10,6 @@
     <h1>This page is made by Abid Hermawan</h1>
     <h2>NRP : 5025231069</h2>
 
-    <a href="/secretmaybe" class="btn">Click me!</a>
+    <a href="{{ route('goodthings') }}" class="btn">Click me!</a>
 </body>
 </html>
