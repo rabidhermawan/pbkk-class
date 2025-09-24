@@ -17,13 +17,17 @@ class GoodthingsController extends Controller
     }
 
     public function show($id) {
-        // route --> /goodthings/{id}
+        // route --> /secretpage/goodthings/{id}
         // fetch a single record & pass into show view
+        $goodthing = Goodthings::findOrFail($id);
+
+        return view('secretstuff.goodthings', ['goodthing' => $goodthing]);
     }
 
     public function create() {
-        // route --> /goodthings/create
+        // route --> /secretstuff/create
         // render a create view (with web form) to users
+        return view('secretstuff.create');
     }
 
     public function store() {
