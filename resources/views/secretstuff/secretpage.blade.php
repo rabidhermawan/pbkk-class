@@ -16,4 +16,6 @@
             </li>
         @endforeach
     </ul>
+
+    {{$goodstuff->links() }}
 </x-layout>

@@ -11,8 +11,9 @@ class GoodthingsController extends Controller
         // route --> /goodthings/
         //fetch all records & pass into the index value
         // $goodthings = Goodthings::all()->get(); // Return all good things
-        $goodthings = Goodthings::orderBy('created_at', 'desc')->get();
-
+        // $goodthings = Goodthings::orderBy('created_at', 'desc')->get();
+        $goodthings = Goodthings::orderBy('created_at', 'desc')->paginate(10);
+        
         return view('secretstuff.secretpage', ["goodstuff" => $goodthings ]);
     }
 
