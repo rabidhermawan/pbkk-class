@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            GoodplaceSeeder::class,
             GoodthingsSeeder::class,
         ]);
     }

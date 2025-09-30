@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('goodthings', function (Blueprint $table) {
+        Schema::create('goodplaces', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('goodthings');
-            $table->integer('goodvalues');
+            $table->string('place_name');
             $table->text('description');
-            $table->foreignId('goodplace_id')->constrained()->onDelete('cascade');
+            $table->string('address');
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('goodthings');
+        Schema::dropIfExists('goodplaces');
     }
 };

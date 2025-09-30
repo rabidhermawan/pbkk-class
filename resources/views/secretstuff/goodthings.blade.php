@@ -1,10 +1,19 @@
 <x-layout>
-    <h1>Good things - #{{ $goodthing->id }}</h1>
+    <h1>Good things - #{{ $goodthings->id }}</h1>
 
     <div class="bg-gray-200 p-4 rounded">
-        <p><strong>Good Things: </strong> {{$goodthing->goodthings}}</p>
-        <p><strong>Good Value: </strong> {{$goodthing->goodvalues}}</p>
+        <p><strong>Good Things: </strong> {{$goodthings->goodthings}}</p>
+        <p><strong>Good Value: </strong> {{$goodthings->goodvalues}}</p>
         <p><strong>Description:</strong></p>
-        <p>{{$goodthing->description}}</p>
+        <p>{{$goodthings->description}}</p>
     </div>
+
+    {{-- Good place Information     --}}
+    <div class="border-2 border-dashed bg-white px-4 pb-4 my-4 rounded">
+        <h3>Goodplace Information</h3>
+        <p><strong>Goodplace name:</strong> {{ $goodthings->goodplace->place_name }}</p>
+        <p><strong>Address:</strong> {{ $goodthings->goodplace->address }}</p>
+        <p><strong>About the Dojo:</strong></p>
+        <p>{{ $goodthings->goodplace->description }}</p>
+</div>
 </x-layout>

@@ -11,11 +11,14 @@
         @foreach($goodstuff as $stuff)
             <li>
                 <x-card href="{{ route('goodthings.show', $stuff->id) }}" :highlight="$stuff['id'] < 2 ">
-                    <h3>{{ $stuff->goodthings }}</h3>
+                    <div>
+                        <h3>{{ $stuff->goodthings }}</h3>
+                        <p>{{ $stuff->goodplace->place_name }}</p>
+                    </div>
                 </x-card>
             </li>
         @endforeach
     </ul>
 
-    {{$goodstuff->links() }}
+    {{-- {{$goodstuff->links() }} --}}
 </x-layout>

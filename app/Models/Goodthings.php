@@ -11,4 +11,10 @@ class Goodthings extends Model
 
     /** @use HasFactory<\Database\Factories\GoodthingsFactory> */
     use HasFactory;
+
+    public function goodplace() {
+        return $this->belongsTo(Goodplace::class);
+    }
+
+    // $goodthings->goodplace->name
 }

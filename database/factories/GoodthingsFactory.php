@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Goodplace;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\goodthings>
@@ -20,7 +21,8 @@ class GoodthingsFactory extends Factory
             //'goodthings' => fake()->name(),
             'goodthings' => fake()->realText(20),
             'goodvalues' => fake()->numberBetween(0,100),
-            'description' => fake()->realText(100)
+            'description' => fake()->realText(100),
+            'goodplace_id' => Goodplace::inRandomOrder()->first()->id,
         ];
     }
 }

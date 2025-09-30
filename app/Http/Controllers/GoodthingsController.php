@@ -11,18 +11,17 @@ class GoodthingsController extends Controller
         // route --> /goodthings/
         //fetch all records & pass into the index value
         // $goodthings = Goodthings::all()->get(); // Return all good things
-        // $goodthings = Goodthings::orderBy('created_at', 'desc')->get();
-        $goodthings = Goodthings::orderBy('created_at', 'desc')->paginate(10);
-        
+        $goodthings = Goodthings::with('goodplace')->orderBy('created_at', 'desc')->get();
+
         return view('secretstuff.secretpage', ["goodstuff" => $goodthings ]);
     }
 
     public function show($id) {
         // route --> /secretpage/goodthings/{id}
         // fetch a single record & pass into show view
-        $goodthing = Goodthings::findOrFail($id);
+        $goodthings = Goodthings::with('goodplace')->findOrFail($id);
 
-        return view('secretstuff.goodthings', ['goodthing' => $goodthing]);
+        return view('secretstuff.goodthings', ["goodthings" => $goodthings]);
     }
 
     public function create() {
