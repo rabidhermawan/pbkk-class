@@ -33,9 +33,20 @@ class GoodthingsController extends Controller
         return view('secretstuff.create', ["goodplaces" => $goodplaces]);
     }
 
-    public function store() {
+    public function store(Request $request) {
         // --> /goodthings/create (POST)
         // handle POST request to store a new ninja record in table
+    
+        $validated = $request->validate([
+            'goodthings' => 'required|string|max:255',
+            'goodvalues' => 'required|integer|min:0|max:100',
+            'description' => 'required|string|min:10|max:1000',
+            'goodplace_id' => 'required|exists:goodplaces,id',
+        ]);
+
+        $goodthing = Goodthings::create($validated);
+
+        return redirect()->route('goodthings.show', $goodthing);
     }
 
 

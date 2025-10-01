@@ -1,10 +1,10 @@
 <x-layout>
-<form action="" method="">
+<form action="{{ route('goodthings.store') }}" method="POST">
   @csrf
   
     <h2>Create Good Stuff</h2>
 
-  <!-- ninja Name -->
+  <!-- Good things -->
   <label for="goodthings">Goodthings Name:</label>
   <input 
     type="text" 
@@ -14,7 +14,7 @@
     required
   >
 
-  <!-- ninja Strength -->
+  <!-- Good Values -->
   <label for="goodvalues">Good Values (0-100):</label>
   <input 
     type="number" 
@@ -23,27 +23,27 @@
     required
   >
 
-  <!-- ninja Bio -->
-  <label for="description">Biography:</label>
+  <!-- Description -->
+  <label for="description">Description:</label>
   <textarea
     rows="5"
     id="description" 
-    name="dscription" 
+    name="description" 
     required
   ></textarea>
 
-  <!-- select a dojo -->
+  <!-- Select a Good Place -->
   <label for="goodplace_id">Goodplace:</label>
   <select id="goodplace_id" name="goodplace_id" required>
     <option value="" disabled selected>Select a Good place</option>
     @foreach($goodplaces as $goodplace)
-        <option value="{{ $goodplace->goodplace_id }}">
+        <option value="{{ $goodplace->id }}">
             {{ $goodplace->place_name }}
         </option>
     @endforeach
   </select>
 
-  <button type="submit" class="btn mt-4">Create Ninja</button>
+  <button type="submit" class="btn mt-4">Create Goodthings</button>
 
   <!-- validation errors -->
   

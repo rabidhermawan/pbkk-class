@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Goodthings extends Model
 {
-    protected $fillable = ['goodthings', 'goodvalues', 'description']; 
+    protected $fillable = ['goodthings', 'goodvalues', 'description', 'goodplace_id']; 
 
     /** @use HasFactory<\Database\Factories\GoodthingsFactory> */
     use HasFactory;
