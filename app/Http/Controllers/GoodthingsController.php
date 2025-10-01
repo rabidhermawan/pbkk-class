@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Goodthings;
+use App\Models\Goodplace;
 use Illuminate\Http\Request;
 
 class GoodthingsController extends Controller
@@ -11,7 +12,7 @@ class GoodthingsController extends Controller
         // route --> /goodthings/
         //fetch all records & pass into the index value
         // $goodthings = Goodthings::all()->get(); // Return all good things
-        $goodthings = Goodthings::with('goodplace')->orderBy('created_at', 'desc')->get();
+        $goodthings = Goodthings::with('goodplace')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('secretstuff.secretpage', ["goodstuff" => $goodthings ]);
     }
@@ -27,7 +28,9 @@ class GoodthingsController extends Controller
     public function create() {
         // route --> /secretstuff/create
         // render a create view (with web form) to users
-        return view('secretstuff.create');
+        $goodplaces = Goodplace::all();
+
+        return view('secretstuff.create', ["goodplaces" => $goodplaces]);
     }
 
     public function store() {

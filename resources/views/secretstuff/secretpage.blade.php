@@ -20,5 +20,5 @@
         @endforeach
     </ul>
 
-    {{-- {{$goodstuff->links() }} --}}
+    {{$goodstuff->links() }}
 </x-layout>
