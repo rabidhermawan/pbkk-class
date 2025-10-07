@@ -13,7 +13,7 @@
         <h3>Goodplace Information</h3>
         <p><strong>Goodplace name:</strong> {{ $goodthings->goodplace->place_name }}</p>
         <p><strong>Address:</strong> {{ $goodthings->goodplace->address }}</p>
-        <p><strong>About the Dojo:</strong></p>
+        <p><strong>About the Goodplace:</strong></p>
         <p>{{ $goodthings->goodplace->description }}</p>
 </div>
 </x-layout>
