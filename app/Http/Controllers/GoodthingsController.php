@@ -17,12 +17,12 @@ class GoodthingsController extends Controller
         return view('secretstuff.secretpage', ["goodstuff" => $goodthings ]);
     }
 
-    public function show($id) {
+    public function show(Goodthings $goodthing) {
         // route --> /secretpage/goodthings/{id}
         // fetch a single record & pass into show view
-        $goodthings = Goodthings::with('goodplace')->findOrFail($id);
+        $goodthing->with('goodplace');
 
-        return view('secretstuff.goodthings', ["goodthings" => $goodthings]);
+        return view('secretstuff.goodthings', ["goodthings" => $goodthing]);
     }
 
     public function create() {
@@ -49,9 +49,8 @@ class GoodthingsController extends Controller
         return redirect()->route('goodthings', $goodthing)->with('success', 'Goodthings created!');
     }
 
-    public function destroy($id){
-        $goodthings = Goodthings::findOrFail($id);
-        $goodthings->delete();
+    public function destroy(Goodthings $goodthing){
+        $goodthing->delete();
 
         return redirect()->route('goodthings')->with('success', 'Goodthings deleted!');;
     }
