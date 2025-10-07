@@ -15,5 +15,13 @@
         <p><strong>Address:</strong> {{ $goodthings->goodplace->address }}</p>
         <p><strong>About the Goodplace:</strong></p>
         <p>{{ $goodthings->goodplace->description }}</p>
-</div>
+    </div>
+
+    <form action="{{ route('goodthings.destroy', $goodthings->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" class="btn my-4">Delete Goodstuff</button>
+    </form>   
+
 </x-layout>

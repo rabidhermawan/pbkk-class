@@ -10,3 +10,4 @@ Route::get('/secretmaybe', [GoodthingsController::class, 'index'])->name('goodth
 Route::get('/secretmaybe/goodthings/create', [GoodthingsController::class, 'create'])->name('goodthings.create');
 Route::get('/secretmaybe/goodthings/{id}', [GoodthingsController::class, 'show'])->name('goodthings.show');
 Route::post('/secretmaybe', [GoodthingsController::class, 'store'])->name('goodthings.store');
+Route::delete('/secretmaybe/goodthings/{id}', [GoodthingsController::class, 'destroy'])->name('goodthings.destroy');

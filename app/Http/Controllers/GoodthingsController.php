@@ -49,5 +49,12 @@ class GoodthingsController extends Controller
         return redirect()->route('goodthings.show', $goodthing);
     }
 
+    public function destroy($id){
+        $goodthings = Goodthings::findOrFail($id);
+        $goodthings->delete();
+
+        return redirect()->route('goodthings');
+    }
+
 
 }
