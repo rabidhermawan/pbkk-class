@@ -46,14 +46,14 @@ class GoodthingsController extends Controller
 
         $goodthing = Goodthings::create($validated);
 
-        return redirect()->route('goodthings.show', $goodthing);
+        return redirect()->route('goodthings', $goodthing)->with('success', 'Goodthings created!');
     }
 
     public function destroy($id){
         $goodthings = Goodthings::findOrFail($id);
         $goodthings->delete();
 
-        return redirect()->route('goodthings');
+        return redirect()->route('goodthings')->with('success', 'Goodthings deleted!');;
     }
 
 
